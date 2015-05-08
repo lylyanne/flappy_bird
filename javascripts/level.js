@@ -2,6 +2,8 @@ var PIPE_DIST_X = 220;
 var PIPE_WIDTH = 50;
 var GAP_HEIGHT = 120;
 var GAME_SPEED = 5;
+var CANVAS_WIDTH = 640;
+var CANVAS_HEIGHT = 480;
 
 function defaultPipes(){
   return [ {
@@ -25,8 +27,7 @@ Level.prototype = {
   drawBackground: function(ctx){
     var pat = ctx.createPattern(this.img, 'repeat');
     ctx.fillStyle = pat;
-    ctx.rect(0, 0, 640, 480);
-
+    ctx.rect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   },
 
@@ -42,7 +43,7 @@ Level.prototype = {
       }
     })
   },
-  
+
   drawPipes: function(ctx) {
     this.pipes.forEach(function(pipe) {
       ctx.fillStyle = "#74d600";

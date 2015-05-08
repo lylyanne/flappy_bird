@@ -18,7 +18,6 @@ function Game(canvas) {
       this.tick();
     }
   }.bind(this), 1000/30);
-
 }
 
 Game.prototype = {
@@ -29,6 +28,7 @@ Game.prototype = {
     this.level = new Level();
     this.tick();
   },
+
   tick: function() {
     if (this.gameOver) {
       this.ctx.font="25px Indie Flower";
@@ -48,6 +48,7 @@ Game.prototype = {
       this.checkCollision();
     }
   },
+  
   checkCollision: function() {
     if (this.level.collidesWith(this.bird.getBounds())) {
       this.gameOver = true;

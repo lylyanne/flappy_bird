@@ -39,9 +39,7 @@ Bird.prototype = {
         this.x,this.y,50,50 // destination coordinates (x,y,w,h)
         );
     this.frameTick++;
-    if(this.frameTick === 14){
-      this.frameTick = 0;
-    }
+    if(this.frameTick === 14) { this.frameTick = 0; }
   },
 
   tick: function(ctx) {
@@ -52,10 +50,11 @@ Bird.prototype = {
   flap: function(){
     this.vel = FLAP_VEL;
   },
+
   getBounds: function() {
     return {
-      topLeft: [this.x + 5, this.y + 5],
-      bottomRight: [this.x + 45, this.y + 45]
+      topLeft: [this.x + 10, this.y + 10],
+      bottomRight: [this.x + 35, this.y + 35]
     }
   }
 };
