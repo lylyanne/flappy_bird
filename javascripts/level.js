@@ -19,18 +19,17 @@ function Level() {
   this.pipes = defaultPipes();
   this.score = new Score();
   this.img = document.getElementById("bg-img");
-
 }
 
 Level.prototype = {
   drawBackground: function(ctx){
-    //ctx.fillStyle = "skyblue";
     var pat = ctx.createPattern(this.img, 'repeat');
     ctx.fillStyle = pat;
     ctx.rect(0, 0, 640, 480);
 
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   },
+
   movePipes: function(){
     var that = this;
     this.pipes.forEach(function(pipe){
@@ -40,15 +39,13 @@ Level.prototype = {
         that.pipes.push({x: that.pipes[1].x + PIPE_DIST_X,
           y: Math.floor(Math.random() * 150 + 30) });
           that.score.score += 1;
-          //console.log(that.score);
-          // var score = document.getElementById("score");
-          // score.innerHTML = "Score: " + that.score;
       }
     })
   },
+  
   drawPipes: function(ctx) {
     this.pipes.forEach(function(pipe) {
-      ctx.fillStyle = "green";
+      ctx.fillStyle = "#74d600";
       ctx.fillRect(pipe.x, 0, PIPE_WIDTH, pipe.y);
       ctx.fillRect(pipe.x, pipe.y + GAP_HEIGHT, PIPE_WIDTH, ctx.canvas.height);
     });
@@ -76,8 +73,6 @@ Level.prototype = {
           bounds.bottomRight[1] < bottomPipe.topLeft[1] ||
           bottomPipe.bottomRight[1] < bounds.topLeft[1])
         ) {
-
-
         collision = true;
         return;
       }

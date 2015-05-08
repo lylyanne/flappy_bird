@@ -24,12 +24,7 @@ Bird.prototype = {
 
   },
   draw: function(ctx) {
-    //ctx.fillStyle = BIRD_COLOR;
-    //ctx.fillRect(this.x, this.y, 40, 30);
-
-    //ctx.drawImage(img , this.x, this.y, 40, 30);
     var frame = this.frameTick % 5;
-    // var pos = this.frameTick % 14;
     var x = frame * 60;
     var y = 0;
     if (this.frameTick > 9) {
@@ -53,6 +48,7 @@ Bird.prototype = {
     this.move();
     this.draw(ctx);
   },
+
   flap: function(){
     this.vel = FLAP_VEL;
   },
