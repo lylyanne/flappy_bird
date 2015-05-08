@@ -63,7 +63,8 @@ Level.prototype = {
     var collision = false;
     this.pipes.forEach(function(pipe) {
       var topPipe = {topLeft: [pipe.x, 0], bottomRight: [pipe.x + PIPE_WIDTH, pipe.y]};
-      var bottomPipe = {topLeft: [pipe.x, pipe.y + GAP_HEIGHT], bottomRight: [pipe.x + PIPE_WIDTH, 480]};
+      var bottomPipe = {topLeft: [pipe.x, pipe.y + GAP_HEIGHT],
+        bottomRight: [pipe.x + PIPE_WIDTH, CANVAS_HEIGHT]};
 
       if (!(bounds.bottomRight[0] < topPipe.topLeft[0] ||
         topPipe.bottomRight[0] < bounds.topLeft[0] ||
