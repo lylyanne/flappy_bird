@@ -31,9 +31,15 @@ Game.prototype = {
   },
   tick: function() {
     if (this.gameOver) {
-      this.ctx.font="50px Verdana";
-  		this.ctx.fillText("GAME OVER!",100,200);
-  		this.ctx.fillText("Press start to play again!",100,300);
+      this.ctx.font="25px Indie Flower";
+      this.ctx.fillStyle = "white";
+      this.ctx.rect(120, 150, 400, 150);
+      this.ctx.lineWidth = "3";
+      this.ctx.stroke();
+      this.ctx.fillRect(120,150,400,150);
+      this.ctx.fillStyle = "red";
+  		this.ctx.fillText("GAME OVER!",250,200);
+  		this.ctx.fillText("Press restart to play again!",160,250);
       this.running = false;
   		return;
     } else {

@@ -29,6 +29,7 @@ button {
 #instruction {
   font-size: 14px;
   width: 400px;
+  top: 100px;
 }
 
 h3 {
