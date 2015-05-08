@@ -40,6 +40,7 @@ Game.prototype = {
       this.ctx.fillStyle = "red";
   		this.ctx.fillText("GAME OVER!",250,200);
   		this.ctx.fillText("Press restart to play again!",160,250);
+      
       this.running = false;
   		return;
     } else {
@@ -48,7 +49,7 @@ Game.prototype = {
       this.checkCollision();
     }
   },
-  
+
   checkCollision: function() {
     if (this.level.collidesWith(this.bird.getBounds())) {
       this.gameOver = true;

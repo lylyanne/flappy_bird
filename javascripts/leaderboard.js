@@ -1,4 +1,6 @@
-function Leaderboard(){}
+function Leaderboard(){
+  this.topScore = 0;
+}
 
 Leaderboard.prototype = {
   getTopScorers: function(){
@@ -9,7 +11,8 @@ Leaderboard.prototype = {
       processData: true,
       dataType: "json"
     }).done(function(data) {
-      console.log(data);
+      if (data.length > 5) { data.splice(5); }
+      this.topScore = data[data.length-1].score;
       data.forEach(function(leader) {
         $("#scores").append("<li>"+ leader.name + ": " + leader.score + "</li>");
       });

@@ -8,15 +8,23 @@
   border: 1px solid black;
 }
 
-button {
-  display: block;
-  width: 100px;
-  height: 50px;
+.button-group {
+  width: 640px;
   margin: 10px auto;
+}
+
+button {
+  display: inline-block;
+  width: auto;
+  height: 50px;
   font-size: 16px;
   border-radius: 5px;
   background-color: #74d600;
   outline: none;
+}
+
+#restart {
+  margin-left: 180px;
 }
 
 #exit {
@@ -48,4 +56,8 @@ hr {
   width: 640px;
   margin: 0 auto;
   text-align: left;
+}
+
+.top-scorers-list {
+  display: none;
 }

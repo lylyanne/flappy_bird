@@ -17,10 +17,15 @@
     <img id="bg-img" src="custom_cloud_background_by_icythehedgehog1-d5b4dye.jpg"
       width="640px" height="480px" style="display:none"/>
     <img id="bird-img" src="bird.png" style="display:none"/>
-    <button id="restart" onclick="restartGame()">Restart</button>
-    <hr>
-    <h3>Top 5 Scorers</h3>
-    <ul id="scores"></ul>
+    <div class="button-group">
+      <button id="restart" onclick="restartGame()">Restart</button>
+      <button id="toggle-top-scorers" onclick="toggleScoreList()">Show/Hide Top Scorers</button>
+    </div>
+    <div class="top-scorers-list">
+      <hr>
+      <h3>Top 5 Scorers</h3>
+      <ul id="scores"></ul>
+    </div>
 
     <dialog id="instruction">
       <h3>Flappy Bird</h3>
@@ -44,7 +49,11 @@
 
           var topScorers = new Leaderboard();
           topScorers.getTopScorers();
-          
+
+          window.toggleScoreList = function() {
+            $(".top-scorers-list").toggle();
+          }
+
           window.restartGame = function (){
             g.restart();
           }
