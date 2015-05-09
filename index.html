@@ -27,6 +27,11 @@
       <ul id="scores"></ul>
     </div>
 
+    <form>
+      <label>Name: </label>
+      <input type="text">
+    </form>
+
     <dialog id="instruction">
       <h3>Flappy Bird</h3>
       <p><strong>Objective:</strong> Fly through the pipes without touching it or hitting the ground.</p>
@@ -38,7 +43,11 @@
     <script>
       function showGame() {
           var canvas = document.getElementById("bird-game");
-          var g = new Game(canvas);
+
+          var topScorers = new Leaderboard();
+          topScorers.getTopScorers();
+
+          var g = new Game(canvas, topScorers);
 
           var modalDialog = document.getElementById('instruction');
           modalDialog.showModal();
@@ -46,9 +55,6 @@
           document.getElementById('exit').onclick = function() {
             modalDialog.close();
           };
-
-          var topScorers = new Leaderboard();
-          topScorers.getTopScorers();
 
           window.toggleScoreList = function() {
             $(".top-scorers-list").toggle();

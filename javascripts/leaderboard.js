@@ -17,5 +17,17 @@ Leaderboard.prototype = {
         $("#scores").append("<li>"+ leader.name + ": " + leader.score + "</li>");
       });
     });
+  },
+
+  add: function(name) {
+    $.ajax({
+      url: "https://dry-cove-2290.herokuapp.com/api/scores",
+      type: 'POST',
+      crossDomain: true,
+      dataType: "json",
+      data: { "name": name, "score": 5 }
+    }).done(function(data) {
+      console.log(done);
+    });
   }
 }

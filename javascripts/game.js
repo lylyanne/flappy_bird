@@ -1,8 +1,9 @@
 var BIRD_X = 50;
 var BIRD_Y = 50;
 
-function Game(canvas) {
+function Game(canvas, leaderboard) {
   this.ctx = canvas.getContext("2d");
+  this.leaderboard = leaderboard;
   this.restart();
   this.ctx.canvas.addEventListener("mousedown", function() {
     if(this.running){
@@ -40,7 +41,8 @@ Game.prototype = {
       this.ctx.fillStyle = "red";
   		this.ctx.fillText("GAME OVER!",250,200);
   		this.ctx.fillText("Press restart to play again!",160,250);
-      
+      this.promptName();
+
       this.running = false;
   		return;
     } else {
@@ -55,4 +57,14 @@ Game.prototype = {
       this.gameOver = true;
     }
   },
+
+  promptName: function() {
+    var name = prompt("Please enter your name");
+
+    if (name != null) {
+      this.leaderboard.add(name);
+    } else {
+      this.leaderboard.add("Visitor");
+    }
+  }
 }
