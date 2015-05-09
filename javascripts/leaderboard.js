@@ -28,5 +28,6 @@ Leaderboard.prototype = {
       success: function(data) {
         console.log("Successfully post");
       }
-  });
+    });
+  }
 }
