@@ -20,7 +20,7 @@ Leaderboard.prototype = {
   },
 
   add: function(name) {
-
+    $.ajax({
       url: "https://dry-cove-2290.herokuapp.com/api/scores",
       type: 'POST',
       crossDomain: true,
@@ -28,5 +28,5 @@ Leaderboard.prototype = {
       success: function(data) {
         console.log("Successfully post");
       }
-  }
+  });
 }
