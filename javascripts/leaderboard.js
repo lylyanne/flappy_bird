@@ -20,14 +20,13 @@ Leaderboard.prototype = {
   },
 
   add: function(name) {
-    $.ajax({
+
       url: "https://dry-cove-2290.herokuapp.com/api/scores",
       type: 'POST',
       crossDomain: true,
-      dataType: "json",
-      data: { "name": name, "score": 5 }
-    }).done(function(data) {
-      console.log(done);
-    });
+      data: { name: name, score: 5 },
+      success: function(data) {
+        console.log("Successfully post");
+      }
   }
 }
