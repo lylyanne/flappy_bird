@@ -1,0 +1,63 @@
+* {
+  font-family: verdana, sans-serif;
+}
+
+#bird-game {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.button-group {
+  width: 640px;
+  margin: 10px auto;
+}
+
+button {
+  display: inline-block;
+  width: auto;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #74d600;
+  outline: none;
+}
+
+#restart {
+  margin-left: 180px;
+}
+
+#exit {
+  width: 50px;
+  height: 25px;
+  font-size: 12px;
+  margin-left: 0;
+}
+
+#instruction {
+  font-size: 14px;
+  width: 400px;
+  top: 100px;
+}
+
+h3 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 2em;
+  color: red;
+  text-align: center;
+}
+
+hr {
+  width: 640px;
+}
+
+#scores {
+  list-style-type: none;
+  width: 640px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.top-scorers-list {
+  display: none;
+}
